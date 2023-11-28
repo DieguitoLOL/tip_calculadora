@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+</head>
+<body>
+  <main>
+    <div class="titulo"><img src="images/logo.svg" alt="Titulo"></div>
+    <section>
+      <article class="calculadora">
+        <div class="contenedor">
+         <div><h4>Bill</h4></div>
+          <img src="images/icon-dollar.svg" alt="icono">
+          <input class="digitar" oninput="calcular_digitado()" type="number" name="dinero" id="cantidad_dinero" placeholder="0">
+        </div>
+        <div class="contenedor">
+          <h4>Select Tip %</h4>
+          <div class="porcentajes">
+            <input type="button" class="porcentaje"  onclick="calcular(5/100)" value="5%">
+            <input type="button" class="porcentaje"  onclick="calcular(10/100)" value="10%">
+            <input type="button" class="porcentaje"  onclick="calcular(15/100)" value="15%">
+            <input type="button" class="porcentaje"  onclick="calcular(25/100)" value="25%">
+            <input type="button" class="porcentaje"  onclick="calcular(50/100)" value="50%">
+            <input type="number" name="" class="digitar_porcentaje" oninput="calcular_digitado()" id="porcentaje_digitado" placeholder="Custom">
+          </div>
+        </div>
+        <div class="contenedor">
+          <div class="texto">
+            <h4>Number of People</h4>
+            <p class="alerta" id="mensaje">Can't be Zero</p>
+          </div>
+            <img class="dolar" src="images/icon-person.svg" alt="icono">
+            <input class="digitar color-borde" type="number"  oninput="mostrar_mensaje(); calcular_digitado();" name="personas" id="cantidad_personas" placeholder="0">
+        </div>
+      </article>
+      <article class="totales">
+        <div>
+          <div class="Contenedor_texto">
+            <div>
+              <h6>Tip Amount</h6>
+              <p>/ person</p>
+            </div>
+            <div><h2 class="resultado" id="Tip_amount">$0.00</h2></div>
+          </div>
+          <div class="Contenedor_texto">
+            <div>
+              <h6>Total</h6>
+              <p>/ person</p>
+            </div>
+            <div><h2 class="resultado" id="Total">$0.00</h2></div>
+          </div>
+        </div>
+        <div><input class="resetear" onclick="remover()" type="button" value="Reset"></div>
+      </article>
+    </section>
+  </main>
+</body>
+<script src="main.js"></script>
+</html>
